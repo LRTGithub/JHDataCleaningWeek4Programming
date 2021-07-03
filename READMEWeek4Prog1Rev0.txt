@@ -12,6 +12,14 @@ JOHNS HOPKINS UNIVERSITY DATA CLEANING COURSE
 WEEK 4
 ==============================================
 
+==============================================
+git@github.com:LRTGithub/JHDataCleaningWeek4Programming.git
+============================================================
+commit number: e7a651dc2c27e1be705f79e949f52d6cb39e1391
+========================================================
+https://github.com/LRTGithub/JHDataCleaningWeek4Programming
+============================================================
+
 The purpose of the assignment is to derive summary descriptive statistics of the larger Dataset with experimental data.
 The data is summarized by R script "Week4P1.r".
 This "READMEWeek4Prog1Rev0.txt" file and the "CodeBookWeek4Prog1Rev0.txt" along with the following initial feed files:

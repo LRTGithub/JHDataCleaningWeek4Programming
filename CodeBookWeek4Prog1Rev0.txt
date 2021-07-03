@@ -15,6 +15,10 @@ WEEK 4
 ==============================================
 git@github.com:LRTGithub/JHDataCleaningWeek4Programming.git
 ============================================================
+commit number: e7a651dc2c27e1be705f79e949f52d6cb39e1391
+========================================================
+https://github.com/LRTGithub/JHDataCleaningWeek4Programming
+============================================================
 
 Test and Train data sets were merged into one, and all the varaibles (columns) describing mean and standard deviation were selected to be part of a new data set. The code extracts only the measurements on the mean and standard deviation for each measurement. This is covered on STEPS 1 through STEP 3 in the code between lines 185 and 258.
 
