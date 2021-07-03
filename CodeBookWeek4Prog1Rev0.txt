@@ -1,0 +1,169 @@
+CODE BOOK
+==========
+DATA DICTIONARY
+===============
+DATE: 2021-07-03
+================
+PREPARED BY: LR
+================
+REVISION: 0
+============
+
+PROGRAMMING ASSIGNMENT
+JOHNS HOPKINS UNIVERSITY DATA CLEANING COURSE
+WEEK 4
+==============================================
+git@github.com:LRTGithub/JHDataCleaningWeek4Programming.git
+============================================================
+
+Test and Train data sets were merged into one, and all the varaibles (columns) describing mean and standard deviation were selected to be part of a new data set. The code extracts only the measurements on the mean and standard deviation for each measurement. This is covered on STEPS 1 through STEP 3 in the code between lines 185 and 258.
+
+[1] "Subject"                     "Activity"
+ [3] "tBodyAcc-mean()-X"           "tBodyAcc-mean()-Y"
+ [5] "tBodyAcc-mean()-Z"           "tGravityAcc-mean()-X"
+ [7] "tGravityAcc-mean()-Y"        "tGravityAcc-mean()-Z"
+ [9] "tBodyAccJerk-mean()-X"       "tBodyAccJerk-mean()-Y"
+[11] "tBodyAccJerk-mean()-Z"       "tBodyGyro-mean()-X"
+[13] "tBodyGyro-mean()-Y"          "tBodyGyro-mean()-Z"
+[15] "tBodyGyroJerk-mean()-X"      "tBodyGyroJerk-mean()-Y"
+[17] "tBodyGyroJerk-mean()-Z"      "tBodyAccMag-mean()"
+[19] "tGravityAccMag-mean()"       "tBodyAccJerkMag-mean()"
+[21] "tBodyGyroMag-mean()"         "tBodyGyroJerkMag-mean()"
+[23] "fBodyAcc-mean()-X"           "fBodyAcc-mean()-Y"
+[25] "fBodyAcc-mean()-Z"           "fBodyAccJerk-mean()-X"
+[27] "fBodyAccJerk-mean()-Y"       "fBodyAccJerk-mean()-Z"
+[29] "fBodyGyro-mean()-X"          "fBodyGyro-mean()-Y"
+[31] "fBodyGyro-mean()-Z"          "fBodyAccMag-mean()"
+[33] "fBodyBodyAccJerkMag-mean()"  "fBodyBodyGyroMag-mean()"
+[35] "fBodyBodyGyroJerkMag-mean()" "tBodyAcc-std()-X"
+[37] "tBodyAcc-std()-Y"            "tBodyAcc-std()-Z"
+[39] "tGravityAcc-std()-X"         "tGravityAcc-std()-Y"
+[41] "tGravityAcc-std()-Z"         "tBodyAccJerk-std()-X"
+[43] "tBodyAccJerk-std()-Y"        "tBodyAccJerk-std()-Z"
+[45] "tBodyGyro-std()-X"           "tBodyGyro-std()-Y"
+[47] "tBodyGyro-std()-Z"           "tBodyGyroJerk-std()-X"
+[49] "tBodyGyroJerk-std()-Y"       "tBodyGyroJerk-std()-Z"
+[51] "tBodyAccMag-std()"           "tGravityAccMag-std()"
+[53] "tBodyAccJerkMag-std()"       "tBodyGyroMag-std()"
+[55] "tBodyGyroJerkMag-std()"      "fBodyAcc-std()-X"
+[57] "fBodyAcc-std()-Y"            "fBodyAcc-std()-Z"
+[59] "fBodyAccJerk-std()-X"        "fBodyAccJerk-std()-Y"
+[61] "fBodyAccJerk-std()-Z"        "fBodyGyro-std()-X"
+[63] "fBodyGyro-std()-Y"           "fBodyGyro-std()-Z"
+[65] "fBodyAccMag-std()"           "fBodyBodyAccJerkMag-std()"
+[67] "fBodyBodyGyroMag-std()"      "fBodyBodyGyroJerkMag-std()"
+
+In a further STEP 4, the data set was further summarized by the 'Subject' variable (person performing the test or train experiment) and the type of 'Activity' the Subject performed. Only the mean is retained in this data set.
+A total of 30 persons performed 6 different activities. This gives origin to 30 x 6 different records, evaluated over 33 different variables( additional to to 'Subject' and 'Activity' variables):
+
+Line 306
+'data.frame':   180 obs. of  35 variables:
+ $ Subject                    : num  2 4 9 10 12 13 18 20 24 1 ...
+ $ Activity                   : chr  "WALKING" "WALKING" "WALKING" "WALKING" ...
+ $ tBodyAcc-mean()-X          : num  0.276 0.279 0.279 0.279 0.277 ...
+ $ tBodyAcc-mean()-Y          : num  -0.0186 -0.0148 -0.0181 -0.017 -0.0156 ...
+ $ tBodyAcc-mean()-Z          : num  -0.106 -0.111 -0.111 -0.109 -0.103 ...
+ $ tGravityAcc-mean()-X       : num  0.913 0.964 0.952 0.963 0.967 ...
+ $ tGravityAcc-mean()-Y       : num  -0.3466 -0.0859 -0.0314 -0.0838 -0.156 ...
+ $ tGravityAcc-mean()-Z       : num  0.0847 0.1278 -0.1159 0.0549 -0.0361 ...
+ $ tBodyAccJerk-mean()-X      : num  0.0618 0.0784 0.0704 0.0858 0.0458 ...
+ $ tBodyAccJerk-mean()-Y      : num  0.01825 0.00296 0.02123 0.00408 0.01978 ...
+ $ tBodyAccJerk-mean()-Z      : num  0.007895 -0.000768 0.004148 -0.016295 0.005026 ...
+ $ tBodyGyro-mean()-X         : num  -0.053 -0.0318 -0.0808 0.0107 -0.1045 ...
+ $ tBodyGyro-mean()-Y         : num  -0.0482 -0.0727 -0.0626 -0.082 -0.0344 ...
+ $ tBodyGyro-mean()-Z         : num  0.0828 0.0806 0.1116 0.0987 0.1 ...
+ $ tBodyGyroJerk-mean()-X     : num  -0.0819 -0.1153 -0.0809 -0.1227 -0.0622 ...
+ $ tBodyGyroJerk-mean()-Y     : num  -0.0538 -0.0393 -0.0356 -0.0519 -0.0499 ...
+ $ tBodyGyroJerk-mean()-Z     : num  -0.0515 -0.0551 -0.0633 -0.0611 -0.0467 ...
+ $ tBodyAccMag-mean()         : num  -0.2904 -0.3121 -0.0981 -0.1274 -0.1022 ...
+ $ tGravityAccMag-mean()      : num  -0.2904 -0.3121 -0.0981 -0.1274 -0.1022 ...
+ $ tBodyAccJerkMag-mean()     : num  -0.281 -0.367 -0.204 -0.133 -0.144 ...
+ $ tBodyGyroMag-mean()        : num  -0.447 -0.498 -0.295 -0.156 -0.356 ...
+ $ tBodyGyroJerkMag-mean()    : num  -0.548 -0.681 -0.51 -0.44 -0.517 ...
+ $ fBodyAcc-mean()-X          : num  -0.346 -0.4267 -0.2947 -0.1142 -0.0544 ...
+ $ fBodyAcc-mean()-Y          : num  -0.0219 -0.1494 -0.2577 0.0534 -0.0713 ...
+ $ fBodyAcc-mean()-Z          : num  -0.454 -0.631 -0.251 -0.412 -0.422 ...
+ $ fBodyAccJerk-mean()-X      : num  -0.3046 -0.3589 -0.3143 -0.1079 -0.0816 ...
+ $ fBodyAccJerk-mean()-Y      : num  -0.0788 -0.2796 -0.3677 0.0309 -0.1414 ...
+ $ fBodyAccJerk-mean()-Z      : num  -0.555 -0.729 -0.4 -0.464 -0.491 ...
+ $ fBodyGyro-mean()-X         : num  -0.43 -0.373 -0.384 -0.278 -0.402 ...
+ $ fBodyGyro-mean()-Y         : num  -0.555 -0.688 -0.437 -0.345 -0.468 ...
+ $ fBodyGyro-mean()-Z         : num  -0.397 -0.601 -0.24 -0.109 -0.317 ...
+ $ fBodyAccMag-mean()         : num  -0.324 -0.451 -0.319 -0.093 -0.153 ...
+ $ fBodyBodyAccJerkMag-mean() : num  -0.1691 -0.3186 -0.3169 0.0205 -0.0299 ...
+ $ fBodyBodyGyroMag-mean()    : num  -0.531 -0.609 -0.514 -0.413 -0.443 ...
+ $ fBodyBodyGyroJerkMag-mean(): num  -0.583 -0.724 -0.603 -0.515 -0.561 ...
+
+This is covered in code lines between 260 to 309.
+The output for the first row of the data is read as follows:
+Subject 2, performing a "WALKING" activity recorded and average "tBodyAcc-mean()-X" of 0.276, and an average "fBodyBodyGyroJerkMag-mean()" of -0.583 across all the "WALKING" experiments that she participated in.
+
+========================================================================================================================================================================================================================================================================================================================
+
+The orginal description for each variable can be found in below:
+
+==================================================================
+Human Activity Recognition Using Smartphones Dataset
+Version 1.0
+==================================================================
+Jorge L. Reyes-Ortiz, Davide Anguita, Alessandro Ghio, Luca Oneto.
+Smartlab - Non Linear Complex Systems Laboratory
+DITEN - Universit� degli Studi di Genova.
+Via Opera Pia 11A, I-16145, Genoa, Italy.
+activityrecognition@smartlab.ws
+www.smartlab.ws
+==================================================================
+
+The experiments have been carried out with a group of 30 volunteers within an age bracket of 19-48 years. Each person performed six activities (WALKING, WALKING_UPSTAIRS, WALKING_DOWNSTAIRS, SITTING, STANDING, LAYING) wearing a smartphone (Samsung Galaxy S II) on the waist. Using its embedded accelerometer and gyroscope, we captured 3-axial linear acceleration and 3-axial angular velocity at a constant rate of 50Hz. The experiments have been video-recorded to label the data manually. The obtained dataset has been randomly partitioned into two sets, where 70% of the volunteers was selected for generating the training data and 30% the test data. 
+
+The sensor signals (accelerometer and gyroscope) were pre-processed by applying noise filters and then sampled in fixed-width sliding windows of 2.56 sec and 50% overlap (128 readings/window). The sensor acceleration signal, which has gravitational and body motion components, was separated using a Butterworth low-pass filter into body acceleration and gravity. The gravitational force is assumed to have only low frequency components, therefore a filter with 0.3 Hz cutoff frequency was used. From each window, a vector of features was obtained by calculating variables from the time and frequency domain. See 'features_info.txt' for more details. 
+
+For each record it is provided:
+======================================
+
+- Triaxial acceleration from the accelerometer (total acceleration) and the estimated body acceleration.
+- Triaxial Angular velocity from the gyroscope. 
+- A 561-feature vector with time and frequency domain variables. 
+- Its activity label. 
+- An identifier of the subject who carried out the experiment.
+
+The dataset includes the following files:
+=========================================
+
+- 'README.txt'
+
+- 'features_info.txt': Shows information about the variables used on the feature vector.
+
+- 'features.txt': List of all features.
+
+- 'activity_labels.txt': Links the class labels with their activity name.
+
+- 'train/X_train.txt': Training set.
+
+- 'train/y_train.txt': Training labels.
+
+- 'test/X_test.txt': Test set.
+
+- 'test/y_test.txt': Test labels.
+
+The following files are available for the train and test data. Their descriptions are equivalent. 
+
+- 'train/subject_train.txt': Each row identifies the subject who performed the activity for each window sample. Its range is from 1 to 30. 
+
+- 'train/Inertial Signals/total_acc_x_train.txt': The acceleration signal from the smartphone accelerometer X axis in standard gravity 
+units 'g'. Every row shows a 128 element vector. The same description applies for the 'total_acc_x_train.txt' and 'total_acc_z_train.txt' 
+files for the Y and Z axis. 
+
+- 'train/Inertial Signals/body_acc_x_train.txt': The body acceleration signal obtained by subtracting the gravity from the total acceleration. 
+
+- 'train/Inertial Signals/body_gyro_x_train.txt': The angular velocity vector measured by the gyroscope for each window sample. 
+The units are radians/second. 
+
+Notes: 
+======
+- Features are normalized and bounded within [-1,1].
+- Each feature vector is a row on the text file.
+
+For more information about this dataset contact: activityrecognition@smartlab.ws
+
+
